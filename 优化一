@@ -1,0 +1,32 @@
+
+
+window.open(url,name,featurs)
+    使用window对象的open()方法来创建新的浏览窗口
+    第一个参数是地址
+    第二个参数是打开的窗口的名字
+    第三个是设置什么width,height呀什么的
+element.event = action...
+   就是把事件放到js里面
+对象检测
+   if (method){
+       statement}
+  就是看看浏览器能能理解这个东西
+     也可以写成if(!xx)return false;
+共享onload事件
+    window.onload=函数名;
+   window.onload=function(){
+        函数();
+       函数();
+}
+ function addLoadEvent(func){
+    var oldonload = window.onload;
+    if(typeof window.onload !='function'){
+        window.onload = func;
+    }else{
+        window.onload = function(){
+            oldonload();
+            func();
+        }
+    }
+}
+addLoadEvent(func);
